@@ -1,0 +1,15 @@
+#
+# miaochuang8lou device configuration
+#
+
+
+config MC_I2C_SUPPORT
+	bool "mc8l i2c support"
+	default n
+	---help---
+	  Enable support for webcams and video grabbers.
+
+	  Say Y when you have a webcam or a video capture grabber board.
+
+
+

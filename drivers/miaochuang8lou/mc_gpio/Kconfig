@@ -1,0 +1,15 @@
+#
+# miaochuang8lou device configuration
+#
+
+
+config MC_GPIO_SUPPORT
+	bool "mc8l gpio support"
+	default n
+	---help---
+	  Enable support for webcams and video grabbers.
+
+	  Say Y when you have a webcam or a video capture grabber board.
+
+
+
