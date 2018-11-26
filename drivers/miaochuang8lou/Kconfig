@@ -14,5 +14,8 @@ config MC8L_SUPPORT
 	  
 	  
 source "drivers/miaochuang8lou/mc_gpio/Kconfig"
+source "drivers/miaochuang8lou/mc_spi/Kconfig"
+source "drivers/miaochuang8lou/mc_pwm/Kconfig"
+source "drivers/miaochuang8lou/mc_i2c/Kconfig"
 
 

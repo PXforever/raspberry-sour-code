@@ -101,6 +101,8 @@ EXPORT_SYMBOL(mc_gpio_getmod);
 
 int mc_gpio_setout(unsigned int pins,int out)
 {
+	
+	gpio_direction_output(pins,!!out);
 	//等待填写
 }
 EXPORT_SYMBOL(mc_gpio_setout);

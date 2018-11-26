@@ -21,24 +21,28 @@ MODULE_AUTHOR("TOPEET");
 int mc_pwm_config(unsigned int pwm_channle,char *config)
 {
 	//配置PWM
+	return 0;
 }
 EXPORT_SYMBOL(mc_pwm_config);
 
 int mc_pwm_start(unsigned int pwm_channle)
 {
 	//PWM开始
+	return 0;
 }
 EXPORT_SYMBOL(mc_pwm_start);
 
 int mc_pwm_stop(unsigned int pwm_channle)
 {
 	//PWM结束
+	return 0;
 }
 EXPORT_SYMBOL(mc_pwm_stop);
 
 
 static long mcpwm_ioctl( struct file *files, unsigned int cmd, unsigned long arg){
 	//控制PWM
+	return 0;
 }
 
 static ssize_t mcpwm_write (struct file *files, const char __user *buff, size_t len, loff_t * offset)
@@ -108,14 +112,24 @@ static  struct miscdevice mcpwm_dev = {
 static int mcpwm_init(void)
 {
 	int ret = -1;
-	mc_pwm_device = pwm_request(PWM0_ID,PWM(n));
-	mc_pwm_device->state.period = 100;
-	mc_pwm_device->state.duty_cycle = 100;
-	mc_pwm_device->state.polarity = PWM_POLARITY_NORMAL;
-	mc_pwm_device->state.enabled = 0;
+	struct pwm_device new_pwm_device;
+	mc_pwm_device = kmalloc( sizeof(struct pwm_device), GFP_KERNEL);
+	if(mc_pwm_device = NULL)
+	{
+		printk("malloc struct pwm_device failed...\n");
+		goto exit_device;
+	}
+	mc_pwm_device = &new_pwm_device;
 	
-	pwm_init_state(mc_pwm_device,&mc_pwm_device->state);
-
+	mc_pwm_device = pwm_request(PWM0_ID,"pwm");
+	mc_pwm_device->state.period = 100;
+	//mc_pwm_device->state.duty_cycle = 100;
+	//mc_pwm_device->state.polarity = PWM_POLARITY_NORMAL;
+	//mc_pwm_device->state.enabled = 1;
+	
+	//pwm_init_state(mc_pwm_device,&mc_pwm_device->state);
+	printk("MC_PWM init success!!\n");
+	return 0;
 exit_device:
 	return -1;
 exit_driver:

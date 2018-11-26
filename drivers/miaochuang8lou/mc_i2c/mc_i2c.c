@@ -154,10 +154,10 @@ static int mci2c_init(void)
 	DriverState = i2c_add_driver(&mci2c_driver);
 	if(DriverState <0)
 	{
-		mc_i2c_print_err("i2c board register failed...\n");
+		mc_i2c_print_err("i2c driver register failed...\n");
 		goto exit_device;
 	}
-	mc_i2c_print_debug("i2c board register success!!\n");
+	mc_i2c_print_debug("i2c driver register success!!\n");
 	return 0;
 	
 exit_device:

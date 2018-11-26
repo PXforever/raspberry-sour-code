@@ -4,8 +4,7 @@
 
 
 config MC_PWM_SUPPORT
-	bool "mc8l pwm support"
-	default n
+	tristate "mc8l pwm support"
 	---help---
 	  Enable support for webcams and video grabbers.
 

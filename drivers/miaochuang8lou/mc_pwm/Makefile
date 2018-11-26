@@ -2,6 +2,6 @@
 # Makefile for the i2c core.
 #
 
-obj-y			+= mc_pwm.o
+obj-$(CONFIG_MC_PWM_SUPPORT)			+= mc_pwm.o
 
 

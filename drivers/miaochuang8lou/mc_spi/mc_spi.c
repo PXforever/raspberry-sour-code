@@ -153,10 +153,10 @@ static int mcspi_init(void)
 	DriverState = spi_register_driver(&mcspi_driver);
 	if(DriverState <0)
 	{
-		mc_spi_print_err("spi board register failed...\n");
+		mc_spi_print_err("spi driver register failed...\n");
 		goto exit_device;
 	}
-	mc_spi_print_debug("spi board register success!!\n");
+	mc_spi_print_debug("spi driver register success!!\n");
 	return 0;
 	
 exit_device:
