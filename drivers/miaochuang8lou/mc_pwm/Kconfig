@@ -1,0 +1,14 @@
+#
+# miaochuang8lou device configuration
+#
+
+
+config MC_PWM_SUPPORT
+	tristate "mc8l pwm support"
+	---help---
+	  Enable support for webcams and video grabbers.
+
+	  Say Y when you have a webcam or a video capture grabber board.
+
+
+

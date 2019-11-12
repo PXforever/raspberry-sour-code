@@ -1,0 +1,21 @@
+#
+# miaochuang8lou device configuration
+#
+
+
+config MC8L_SUPPORT
+	bool "miaochuang8lou driver support"
+	default n
+	---help---
+	  Enable support for webcams and video grabbers.
+
+	  Say Y when you have a webcam or a video capture grabber board.
+
+	  
+	  
+source "drivers/miaochuang8lou/mc_gpio/Kconfig"
+source "drivers/miaochuang8lou/mc_spi/Kconfig"
+source "drivers/miaochuang8lou/mc_pwm/Kconfig"
+source "drivers/miaochuang8lou/mc_i2c/Kconfig"
+
+
